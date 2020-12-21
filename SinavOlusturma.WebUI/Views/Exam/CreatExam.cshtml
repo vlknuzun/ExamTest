@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewData["Title"] = "CreatExam";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model SinavOlusturma.WebUI.Models.ViewModel
+
+<head>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link href="~/lib/css/creatExam/creatExam.css" rel="stylesheet" />
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    @*<form asp-controller="Home" asp-action="Create">
+
+            <select asp-for="@(Model.Exam.Headline)"
+                    asp-items="@(new SelectList(Emoloyee "Id","FullName"))">
+                <option>Please select one</option>
+            </select>
+
+            <input type="submit" />
+
+        </form>*@
+    <form>
+        <div class="container col-md-8">
+            <div class="card">
+                <label>Lütfen Soru Başlığını Seçiniz</label>
+                <select id="Exam_Headline" asp-items="@ViewBag.Headlines" onchange="Exam.getContentById($(this).val())">
+                    <option value="">Bir Soru Başlığı Seçiniz</option>
+                </select>
+                <br />
+                <textarea id="Exam_Content" name="Exam.Content" rows="5" cols="50" readonly></textarea>
+                <br />
+                <input id="Question_Content" placeholder="Soru 1(Lütfen Soru İçeriğini Yazınız)" />
+                <br />
+
+                <div class="container">
+                    <div class="container-fluid">
+                            <span class="col-md-8">
+                                <input id="Selection_Content" value="" placeholder="Lütfen Şık İçeriklerini Yazınız" />
+                                <input id="Selection_Content" value="" placeholder="Lütfen Şık İçeriklerini Yazınız" />
+                                <input id="Selection_Content" value="" placeholder="Lütfen Şık İçeriklerini Yazınız" />
+                                <input id="Selection_Content" value="" placeholder="Lütfen Şık İçeriklerini Yazınız" />
+                            </span>
+                    </div>
+                    <span class="col-md">
+                        <label for="question">Lütfen Doğru Şıkkı Seçiniz</label>
+                        <select name="question" id="question">
+                            <option value="">A</option>
+                            <option value="">B</option>
+                            <option value="">C</option>
+                            <option value="">D</option>
+                        </select>
+                    </span>
+                </div>
+                <br />
+
+                <br />
+                <span>
+                    <input type="submit" class="btn btn-primary" value="Soru Ekle">
+                    <input id="btnAdd" type="button" class="btn btn-success" value="Sınavı Oluştur" onclick="Exam.create()" />
+                </span>
+            </div>
+        </div>
+    </form>
+
+</body>
+
+
+
+

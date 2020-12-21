@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="~/lib/css/login/login.css" rel="stylesheet" />
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="~/lib/images/konusarak-ogren-logo.png" id="icon" alt="User Icon" />
+        </div>
+
+        <!-- Login Form -->
+        <form asp-action="Index" method="post">
+            <input type="text" id="login" class="fadeIn second" name="UserName" placeholder="User Name">
+            <input type="password" id="password" class="fadeIn third" name="Password" placeholder="Password">
+            <input type="submit" class="fadeIn fourth" id="btnPost" value="Log In">
+        </form>
+
+        
+    </div>
+</div>
+
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnPost").click(function () {
+            $.ajax({
+                url:'',
+                    type: 'POST',
+                dataType: 'json',
+                data: { userNama: '', password: '' },
+                success: function (gelenveri) {
+
+                },
+                error: function (hata) {
+
+                }
+                
+
+
+            })
+        })
+    })
+</script>*@
